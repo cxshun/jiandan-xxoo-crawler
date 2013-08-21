@@ -1,0 +1,2 @@
+pic-dir=D:\
+startUrl=http://jiandan.net/xxoo
