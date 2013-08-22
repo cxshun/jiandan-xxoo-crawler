@@ -1,2 +1,4 @@
 pic-dir=D:\
 startUrl=http://jiandan.net/xxoo
+#自动保存时间
+autosave=5
