@@ -1,4 +1,10 @@
-pic-dir=D:\
-startUrl=http://jiandan.net/xxoo
-#自动保存时间
-autosave=5
+picdir=D:\jiandan
+confdir=D:\jiandan\conf\
+starturl=http://jiandan.net/ooxx
+#自动保存时间(单位为秒)
+autosave=10
+#爬取图片时间(单位为秒)
+crawlfrequency=3
+encoding=utf-8
+imgxpath=//ol[@class='commentlist']//p/img/@src
+urlxpath=//div[@class='comments'][1]/p[@class='cp-pagenavi']/a/@href

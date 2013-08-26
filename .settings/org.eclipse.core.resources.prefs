@@ -1,2 +1,4 @@
 eclipse.preferences.version=1
-encoding//processor/url.py=utf-8
+encoding/processor.py=utf-8
+encoding/threadutils.py=utf-8
+encoding/writingutils.py=utf-8
