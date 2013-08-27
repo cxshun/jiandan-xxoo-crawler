@@ -24,8 +24,11 @@ class urlprocess:
     
     def checkdir(self):
         '''
-        判断配置文件放置的目录是否存在，不存在则进行创建
+        判断目录是否存在，不存在则进行创建
         '''
+        #判断存放文件的文件夹是否存在
+        if (not os.path.exists(self.confdict["picdir"])):
+            os.makedirs(self.confdict["picdir"])
         #判断存在配置文件的目录是否存在，不存在的情况下，新建该目录
         if (not os.path.exists(self.confdict["confdir"])):
             os.makedirs(self.confdict["confdir"])

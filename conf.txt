@@ -1,10 +1,15 @@
+#存放图片的文件夹
 picdir=D:\jiandan
+#存放配置文件夹的目录
 confdir=D:\jiandan\conf\
+#开始页面，不需要修改
 starturl=http://jiandan.net/ooxx
 #自动保存时间(单位为秒)
 autosave=10
 #爬取图片时间(单位为秒)
 crawlfrequency=10
+#网页编码，不需要修改
 encoding=utf-8
+#下面为xpath，不需要进行修改
 imgxpath=//ol[@class='commentlist']//p/img/@src
 urlxpath=//div[@class='comments'][1]/p[@class='cp-pagenavi']/a/@href
