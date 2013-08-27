@@ -7,9 +7,7 @@ class urlprocess:
     
     #配置的dict
     confdict = {}
-    #线程对象，用于写入等待和完成队列
-    tu = threadutils()
-    
+
     def __init__(self):
         '''
         初始化操作，包括读文件等
@@ -39,15 +37,15 @@ if __name__ == "__main__":
     
     pro.checkdir()
     
-    tu = threadutils()
+    tu = threadutils(pro.confdict)
     #执行定时任务，把列表写入文件
-    tu.startwritingthread(pro.confdict)
+    tu.startwritingthread()
     
     #开始进行URL的访问并分析
-    crawlurlthread = threading.Thread(target = tu.startcrawlurl, args = (pro.confdict,))
+    crawlurlthread = threading.Thread(target = tu.startcrawlurl)
     crawlurlthread.start()
     #开始进行爬图
-    crawlimgthread = threading.Thread(target = tu.startcrawlimg, args = (pro.confdict,))
+    crawlimgthread = threading.Thread(target = tu.startcrawlimg)
     crawlimgthread.start()
     
     

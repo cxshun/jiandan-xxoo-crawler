@@ -1,4 +1,5 @@
 #coding=utf-8
+import os
 import urllib.request
 
 class writingutils:
@@ -11,16 +12,20 @@ class writingutils:
         for url in waitinglist:
             f.write(url + "\n")
     
-    def readfromfile(self,filename):
+    def readfromfile(self,filename,confdict):
         '''
         从文件中读取保存的队列，用于重新进行处理
         '''
-        f = open(filename,"r")
-        savedlist = []
-        for line in f.readlines():
-            #去掉末尾的\n
-            savedlist.append(line.strip("\n"))
-        return savedlist
+        #判断文件是否存在，如果不存在则不需要进行读取
+        if os.path.isfile(confdict["confdir"] + "/" + filename):
+            f = open(confdict["confdir"] + "/" + filename,"r")
+            savedlist = []
+            for line in f.readlines():
+                #去掉末尾的\n
+                savedlist.append(line.strip("\n"))
+            return savedlist
+        else:
+            return []
     
     def saveimgtofile(self,url,processlistdict,confdict):
         '''
@@ -29,7 +34,6 @@ class writingutils:
         if url in processlistdict["finishedimglist"]:
             #从等待列表中移除当前的URL
             processlistdict["waitingimglist"].remove(url)
-            pass
         else:
             picdir = confdict["picdir"]
             filename = url[url.rfind("/") + 1:]

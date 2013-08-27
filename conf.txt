@@ -4,7 +4,7 @@ starturl=http://jiandan.net/ooxx
 #自动保存时间(单位为秒)
 autosave=10
 #爬取图片时间(单位为秒)
-crawlfrequency=3
+crawlfrequency=10
 encoding=utf-8
 imgxpath=//ol[@class='commentlist']//p/img/@src
 urlxpath=//div[@class='comments'][1]/p[@class='cp-pagenavi']/a/@href
